@@ -4,17 +4,20 @@
 
 body {
   margin: 0px;
-  font-family: 'segoe ui';
+  font-family: 'Roboto';
   overflow-x: hidden;
 }
+
 .row{
   max-width: 100vw;
 
 }
+
+/* Top navigation bar  */
 .nav {
   height: 50px;
   width: 100%;
-  background-color: #2b4871;
+  background-color:transparent;
   position: relative;
 }
 
@@ -47,7 +50,7 @@ body {
 }
 
 .nav > .nav-links > a:hover {
-  background-color: rgba(253, 218 , 0,.95);
+  background-color: rgba(253, 218 , 0,1);
   color: #2b4871;
   transition: all 0.2s ease-in;
   
@@ -84,7 +87,7 @@ body {
     position: absolute;
     display: block;
     width: 100%;
-    background-color: rgba(5,186,221,0.95);
+    background-color: #0091ea;
     height: 0px;
     transition: all 0.3s ease-in;
     overflow-y: hidden;
@@ -115,7 +118,8 @@ body {
 
 /* The landing section */
 .backy{
-  z-index: 0;
+  margin-top: -50px;
+  z-index: -1;
   position: absolute;
   height:110vh;
   width: 100%;
@@ -141,7 +145,7 @@ body {
 
 .main-text{
   font-size: 5rem;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Roboto';
   font-weight: 600;
   color:white;
   margin: auto;
@@ -157,7 +161,7 @@ body {
 
 .sub-text{
   font-size: 2rem;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Roboto';
   font-weight: 600;
   color:white;
   margin: auto;
@@ -201,7 +205,7 @@ body {
 }
 
 .button1 {
-  background-color: 4CAF50; 
+  background-color: #4CAF50; 
   color: wheat; 
   border: 2px solid #4CAF50;
 }
@@ -209,10 +213,42 @@ body {
 .button1:hover {
   border: 2px solid white;
 }
+.mu-subscribe-form {
+	position: relative;
+}
+
+.mu-subscribe-form input {
+	width: 100%;
+	height: 60px;
+	border-radius: 25px;
+	border: none;
+	padding: 0 170px 0 20px;
+	font-size: 14px;
+	color: #000;
+}
+
+.mu-subscribe-btn {
+	background-color: #0091ea;
+	color: #fff;
+	font-size: 18px;
+	position: absolute;
+	right: 6px;
+	top: 6px;
+	height: 48px;
+	width: 160px;
+	cursor: pointer;
+	border-radius: 24px;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
 
 .typewrite{
   color: white;
 }
+
+
+/* Features section */
 
 .features{
   height: 100%;
@@ -303,7 +339,7 @@ body {
   transform: rotate(-20deg);
 }
 .feature-card-wrapper .card h3 {
-  font-family: "Lato-Regular";
+  font-family: 'Roboto';
   font-size: 24px;
   color: #1d3ede;
 }
@@ -323,14 +359,11 @@ body {
   background-size: cover;
   /* ,linear-gradient(90deg, #2b4871, #05badd); */
   -webkit-clip-path: polygon(100% 15%, 1% 78%, 100% 100%);
-  clip-path: polygon(100% 15%, 1% 78%, 100% 100%);
- 
+  clip-path: polygon(100% 15%, 1% 78%, 100% 100%); 
 }
 
-
+/* decription section */
 .description{
-  /* background-image: url("./trianglify-lowres.png");
-  background-size: cover; */
   min-height:100vh;
   margin-top: -200vh;
 }
@@ -394,7 +427,7 @@ body {
   background: white;
   margin: 30px 5px;
   padding: 20px 0px;
-  border-radius: 20px;
+  border-radius: 0px;
   box-shadow: 0 15px 40px 0 rgba(0, 0, 0, 0.2);
   min-height: 70vh;
 }
@@ -413,7 +446,7 @@ body {
   transform: rotate(-20deg);
 }
 .description-card-wrapper .card h3 {
-  font-family: "Lato-Regular";
+  font-family: 'Roboto';
   font-size: 24px;
   color: #1d3ede;
 }
