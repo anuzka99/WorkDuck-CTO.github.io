@@ -1,3 +1,28 @@
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 500, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+
 var TxtType = function(el, toRotate, period) {
         this.toRotate = toRotate;
         this.el = el;
@@ -54,3 +79,36 @@ var TxtType = function(el, toRotate, period) {
         css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
         document.body.appendChild(css);
     };
+
+// Expandable card
+var $cell = $('.card');
+
+//open and close card when clicked on card
+$cell.find('.js-expander').click(function() {
+
+  var $thisCell = $(this).closest('.card');
+
+  if ($thisCell.hasClass('is-collapsed')) {
+    $cell.not($thisCell).removeClass('is-expanded').addClass('is-collapsed').addClass('is-inactive');
+    $thisCell.removeClass('is-collapsed').addClass('is-expanded');
+    if ($cell.not($thisCell).hasClass('is-inactive')) {
+      //do nothing
+    } else {
+      $cell.not($thisCell).addClass('is-inactive');
+    }
+
+  } else {
+    $thisCell.removeClass('is-expanded').addClass('is-collapsed');
+    $cell.not($thisCell).removeClass('is-inactive');
+  }
+});
+
+//close card when click on cross
+$cell.find('.js-collapser').click(function() {
+
+  var $thisCell = $(this).closest('.card');
+
+  $thisCell.removeClass('is-expanded').addClass('is-collapsed');
+  $cell.not($thisCell).removeClass('is-inactive');
+
+});
