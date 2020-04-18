@@ -1,4 +1,25 @@
+
 $(document).ready(function(){
+  var slider = $("#myRange").get(0);
+var output = $("#demo").get(0);
+
+var slider2 = $("#myRange1").get(0);
+var output2 = $("#demo1").get(0);
+output.innerHTML = slider.value;
+output2.innerHTML = slider2.value;
+// console.log(output);
+slider.oninput = function() {
+  x=this.value;
+  output.innerHTML = x;
+  if(x>=100 && x<1000)
+  var y = 0.0009*x*x -0.03*x -1;
+  else
+  var y =  0.0012*x*x -0.33*x -1
+  slider2.value = y;
+  output2.innerHTML = Math.floor(y);
+  
+  console.log(this.value);
+}
   // Add smooth scrolling to all links
   $("a").on('click', function(event) {
 
@@ -107,3 +128,4 @@ $cell.find('.js-collapser').click(function() {
   $cell.not($thisCell).removeClass('is-inactive');
 
 });
+
