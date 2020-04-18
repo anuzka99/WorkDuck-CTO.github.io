@@ -22,7 +22,7 @@ a{
   width: 100%;
   /* background-color:transparent; */
   position: fixed;
-  background: linear-gradient(45deg, #2b4871, #05badd);
+  background: linear-gradient(45deg, #1C548D, rgb(58,118,191), rgb(66,132,204), rgb(99,158,224), rgb(148,191,239));
   box-shadow: 8px 8px 6px 8px rgba(0, 0, 0, 0.1);
   z-index:5;
 }
@@ -57,7 +57,7 @@ a{
 
 .nav > .nav-links > a:hover {
   background-color: rgba(253, 218 , 0,1);
-  color: #2b4871;
+  color: #1C548D;
   transition: all 0.2s ease-in;
   
 }
@@ -66,7 +66,7 @@ a{
   display: none;
 }
 
-@media (max-width:600px) {
+@media (max-width:700px) {
   .nav > .nav-btn {
     display: inline-block;
     position: absolute;
@@ -76,7 +76,7 @@ a{
   .nav > .nav-btn > label {
     display: inline-block;
     width: 50px;
-    height: 80px;
+    height: 75px;
     padding: 13px;
   }
   .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
@@ -93,11 +93,11 @@ a{
     position: absolute;
     display: block;
     width: 100%;
-    background-color: #0091ea;
+    background-color: rgb(66,132,204);
     height: 0px;
     transition: all 0.3s ease-in;
     overflow-y: hidden;
-    top: 80px;
+    top: 75px;
     left: 0px;
   }
   .nav > .nav-links > a {
@@ -106,7 +106,7 @@ a{
   }
   .nav > .nav-links > a:hover {
     background-color: rgba(255,180,4,.95);
-    color: #2b4871;
+    color: #1C548D;
     margin-left:10px;
     width: calc(100vw - 10px);
     transition: all 0.2s ease-in;
@@ -117,7 +117,7 @@ a{
     height: 0px;
   }
   .nav > #nav-check:checked ~ .nav-links {
-    height: calc(100vh - 80px);
+    height: calc(100vh - 75px);
     overflow-y: auto;
   }
 }
@@ -139,7 +139,7 @@ a{
 }
 
 .left-section, .right-section{
-  height: calc(100vh - 80px);
+  height: calc(100vh - 75px);
 }
 
 .main-text{
@@ -204,7 +204,7 @@ a{
 }
 
 .mu-subscribe-btn {
-	background-color: springgreen;
+	background-color: #FB7420;
 	color: #fff;
 	font-size: 18px;
 	position: absolute;
@@ -237,7 +237,7 @@ a{
   min-height: 45vh;
   height: 100%;
   margin: auto;
-  border-color: #2b4871;
+  border-color: #1C548D;
   border-style: double;
   border-width: thick;
   border-radius: 8px;
@@ -254,8 +254,9 @@ a{
 .features{
   height: 100%;
   position: relative;
-  background-image: url("./trianglify-lowres.png");
-  background-size: cover;
+  background-color: #626175;
+    /* background-image: url("./trianglify-lowres.png");
+    background-size: cover; */
   
   /* margin-top: -110vh; */
 }
@@ -345,7 +346,7 @@ a{
 .feature-card-wrapper .card h3 {
   font-family: 'Roboto';
   font-size: 24px;
-  color: #1d3ede;
+  color: #1C548D;
 }
 .feature-card-wrapper .card p {
   font-size: 16px;
@@ -359,9 +360,9 @@ a{
   position: relative;
   min-height:100vh;
   /* margin-top: -200vh; */
-  background-image: url("./trianglify-lowres (1).png");
+  /* background-image: url("./trianglify-lowres (1).png"); */
   /* opacity: 0.95; */
-  background-size: cover;
+  /* background-size: cover; */
 
 }
 
@@ -682,7 +683,7 @@ section.contact .contact-form .checkbox-submit {
 /*footer*/
 
 footer.footer {
-  background: linear-gradient(45deg, #2b4871, #05badd);
+  background: linear-gradient(45deg, #1C548D, rgb(58,118,191), rgb(66,132,204), rgb(99,158,224), rgb(148,191,239));
   background-size: 100% 100%;
   min-height: 400px;
   margin-top: 100px;
@@ -777,7 +778,7 @@ footer.footer .footer-text .footer-text-single p a {
   }
 }
 .card:hover .card__inner {
-  background-color: springgreen;
+  background-color: #FB7420;
   opacity: 0.95;
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
@@ -842,7 +843,7 @@ footer.footer .footer-text .footer-text-single p a {
   opacity: 0;
 }
 .card.is-expanded .card__inner {
-  background-color: #1abc9c;
+  background-color: rgb(150, 64, 11);
 }
 .card.is-expanded .card__inner:after {
   content: "";
