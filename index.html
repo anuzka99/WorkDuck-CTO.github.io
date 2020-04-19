@@ -12,7 +12,6 @@
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'><link rel="stylesheet" href="./style.css">
 
   <link rel="stylesheet" href="styles/styles.css">
-  <link rel="stylesheet" href="styles/styles.scss">
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
@@ -91,53 +90,64 @@
             How we work
         </div>
         <!-- partial:index.partial.html -->
-    <div class="wrapper">
-        <div class="cards">
-
-            <a href = '#expander'>
-            <div class=" card [ is-collapsed ] " id = "card-top">
-                <div class="card__inner [ js-expander ]">
-                    <span>Real-time employee insights</span>
-                </div></a>
-            <div class="card__expander" id = "expander">
-                <a href = "#card-top"><i class="fa fa-close [ js-collapser ]"></i></a>
-                Stay on the top of all employee matters
-                WorkDuck provides you real-time insights into business-critical employee matters like 
-                employee engagement and employee productivity, 
-                using a conversational chatbot which engages your 
-                employees using bite-sized surveys called quacks.
+        <div class = "row">
+            <div class = "col-md-4 col-sm-6 col-xs-12">
+                <div class="card text-center" onclick="on(0)">
+                        <div class="oval"><img class="card-img-top" src="images/seo.png" alt=""></div>
+                        <div class="card-body">
+                            <h3 class="card-title">Real Time Employee Insights</h3>
+                            <div class="card-text">
+                            Some vague desc
+                        </div>    
+                    </div>
+                </div>
             </div>
+            <div class = "col-md-4 col-sm-6 col-xs-12 clickero">
+                <div class="card text-center" onclick="on(1)">
+                        <div class="oval"><img class="card-img-top" src="images/seo.png" alt=""></div>
+                        <div class="card-body">
+                            <h3 class="card-title">Actionable recommendations for managers and HR</h3>
+                            <div class="card-text">
+                            Some vague desc
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <a href = '#expander'><div class=" card [ is-collapsed ] " id = "card-top">
-            <div class="card__inner [ js-expander ]">
-                <span>Actionable recommendations for managers and HR</span>
-            </div></a>
-            <div class="card__expander" id = "expander">
-            <a href = "#card-top"><i class="fa fa-close [ js-collapser ]"></i></a>
-                Deal with workplace and employee productivity issues like a pro
-                WorkDuck provides action items as recommendations to deal with common workplace
-                issues like disengagement, burnout and productivity loss, once identified by the aid 
-                of our real-time insights.
+            <div class = "col-md-4 col-sm-6 col-xs-12">
+                <div class="card text-center" onclick="on(2)">
+                        <div class="oval"><img class="card-img-top" src="images/seo.png" alt=""></div>
+                        <div class="card-body">
+                            <h3 class="card-title">AI-driven people risk management</h3>
+                            <div class="card-text">
+                            Some vague desc
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div class="overlay" id="overlay0" onclick="off(0)">
+                <div class="overlay-content"> Stay on the top of all employee matters
+                    WorkDuck provides you real-time insights into business-critical employee matters like employee engagement and employee productivity, using a conversational chatbot which engages your employees using bite-sized surveys called quacks.
+                </div>
             </div>
-
-            <a href = '#expander'><div class=" card [ is-collapsed ] " id = "card-top">
-            <div class="card__inner [ js-expander ]">
-                <span>AI-driven people risk management</span>
-            </div></a>
-            <div class="card__expander" id = "expander">
-                <a href = "#card-top"><i class="fa fa-close [ js-collapser ]"></i></a>
-                Identify potential workplace risks before they even take place
-                WorkDuck uses the secondary exhaust data from workplace apps as well 
-                as insights from the quacks to run complex machine learning models in order to make
-                predictions about critical employee risks like attrition, disengagement and burnout.
+            <div class="overlay" id="overlay1" onclick="off(1)">
+                <div class="overlay-content"> Deal with workplace and employee productivity issues like a pro
+                    WorkDuck provides action items as recommendations to deal with common workplace issues like disengagement, burnout and productivity loss, once identified by the aid of our real-time insights.
+                </div>
             </div>
-            </div>
+            <div class="overlay" id="overlay2" onclick="off(2)">
+                <div class="overlay-content"> Identify potential workplace risks before they even take place
+                    WorkDuck has custom integrations with multiple workplace apps used to run complex machine learning models in order to make predictions about critical employee risks like attrition, disengagement and burnout.
+                </div>
+            </div>                
         </div>
-    </div>
-<!-- partial -->
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
+        <script>
+                    function on() {
+                        document.getElementById("overlay"+arguments[0]).style.display = "flex";
+                    }
+                    function off() {
+                    document.getElementById("overlay"+arguments[0]).style.display = "none";
+                    }
+                </script>
     </section>
     <section class = "description">
         <div class = "description-header">
@@ -152,12 +162,12 @@
                             <h3 class="card-title">Score Calculator</h3>
                             <div class="card-text">
                                 <div class="slidecontainer">
-                                    <input type="range" min="100" max="10000" value="500" class="slider" id="myRange">
-                                    <p>Value: <span id="demo"></span></p>
+                                    <input type="range" min="5" max="50000" value="216" class="slider" id="myRange1" disabled>
+                                    <p>Value: <span id="demo1"></span> in thousand dollars per month  </p>
                                 </div>
                                 <div class="slidecontainer">
-                                    <input type="range" min="5" max="50000" value="216" class="slider" id="myRange1">
-                                    <p>Value: <span id="demo1"></span> in thousand dollars per month  </p>
+                                    <input type="range" min="100" max="10000" value="500" class="slider" id="myRange">
+                                    <p>Value: <span id="demo"></span></p>
                                 </div>
                             </div>
                         </div>

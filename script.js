@@ -1,14 +1,14 @@
-
 $(document).ready(function(){
-  var slider = $("#myRange").get(0);
-var output = $("#demo").get(0);
+// Slider 
 
-var slider2 = $("#myRange1").get(0);
-var output2 = $("#demo1").get(0);
-output.innerHTML = slider.value;
-output2.innerHTML = slider2.value;
-// console.log(output);
-slider.oninput = function() {
+  var slider = $("#myRange").get(0);
+  var output = $("#demo").get(0);
+
+  var slider2 = $("#myRange1").get(0);
+  var output2 = $("#demo1").get(0);
+  output.innerHTML = slider.value;
+  output2.innerHTML = slider2.value;
+  slider.oninput = function() {
   x=this.value;
   output.innerHTML = x;
   if(x>=100 && x<1000)
@@ -18,8 +18,9 @@ slider.oninput = function() {
   slider2.value = y;
   output2.innerHTML = Math.floor(y);
   
-  console.log(this.value);
-}
+  }
+  // overlay
+
   // Add smooth scrolling to all links
   $("a").on('click', function(event) {
 
@@ -43,6 +44,7 @@ slider.oninput = function() {
   });
 });
 
+// Typewriter effect
 var TxtType = function(el, toRotate, period) {
         this.toRotate = toRotate;
         this.el = el;
@@ -99,33 +101,3 @@ var TxtType = function(el, toRotate, period) {
         css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
         document.body.appendChild(css);
     };
-
-// Expandable card
-var $cell = $('.card');
-
-//open and close card when clicked on card
-$cell.find('.js-expander').click(function() {
-
-  var $thisCell = $(this).closest('.card');
-
-  if ($thisCell.hasClass('is-collapsed')) {
-    $cell.not($thisCell).removeClass('is-expanded').addClass('is-collapsed').addClass('is-inactive');
-    $thisCell.removeClass('is-collapsed').addClass('is-expanded');
-    if ($cell.not($thisCell).hasClass('is-inactive')) {
-      //do nothing
-    } else {
-      $cell.not($thisCell).addClass('is-inactive');
-    }
-  }
-});
-
-//close card when click on cross
-$cell.find('.js-collapser').click(function() {
-
-  var $thisCell = $(this).closest('.card');
-
-  $thisCell.removeClass('is-expanded').addClass('is-collapsed');
-  $cell.not($thisCell).removeClass('is-inactive');
-
-});
-
