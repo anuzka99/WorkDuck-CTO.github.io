@@ -436,7 +436,6 @@ $(function () {
 
 });
 
-
 var rangeSlider = document.getElementById("rs-range-line");
 var rangeBullet = document.getElementById("rs-bullet");
 
@@ -446,9 +445,6 @@ var rangeBullet1 = document.getElementById("rs-bullet-1");
 rangeSlider.addEventListener("input", showSliderValue, false);
 rangeSlider1.addEventListener("input", showSliderValue1, false);
 
-function showSliderValue() {
-    }
-
 function showSliderValue1() {
     rangeBullet1.innerHTML = rangeSlider1.value;
     var bulletPosition1 = (rangeSlider1.value /rangeSlider1.max);
@@ -457,5 +453,4 @@ function showSliderValue1() {
     var bulletPosition = (rangeSlider1.value /rangeSlider1.max);
     rangeBullet.style.left = (bulletPosition * 578) + "px";
     rangeSlider.value = rangeSlider1.value;
-  }
-    
+}
