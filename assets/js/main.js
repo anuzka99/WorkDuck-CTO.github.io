@@ -438,10 +438,11 @@ $(function () {
 
 var rangeSlider = document.getElementById("rs-range-line");
 var rangeBullet = document.getElementById("rs-bullet");
-
 var rangeSlider1 = document.getElementById("rs-range-line-1");
 var rangeBullet1 = document.getElementById("rs-bullet-1");
-
+rangeSlider.style.filter = "hue-rotate(90deg)";
+rangeBullet.style.filter = "hue-rotate(90deg)";
+    
 rangeSlider1.addEventListener("input", showSliderValue1, false);
 
 function showSliderValue1() {
@@ -458,6 +459,8 @@ function showSliderValue1() {
     rangeBullet.innerHTML = y;
     var bulletPosition = (y /rangeSlider.max);
     if(bulletPosition>1) bulletPosition=1;
+    rangeSlider.style.filter = "hue-rotate("+(1-bulletPosition)*90+"deg)";
+    rangeBullet.style.filter = "hue-rotate("+(1-bulletPosition)*90+"deg)";
     rangeBullet.style.left = (bulletPosition * (rangeSlider.offsetWidth-22)) + "px";
     rangeSlider.value = y;
 }
