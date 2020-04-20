@@ -1330,42 +1330,6 @@ border: 0px solid #1C548D;
   margin-top: -2px;
 }
 
-
-/*===========================
-       09.BLOG  css 
-===========================*/
-.single-blog .blog-image img {
-  border-radius: 10px;
-  width: 100%; }
-
-.single-blog .blog-content {
-  padding-top: 25px; }
-  .single-blog .blog-content .meta li {
-    font-size: 16px;
-    color: #6A6972;
-    display: inline-block;
-    margin-left: 50px; }
-    .single-blog .blog-content .meta li:first-child {
-      margin-left: 0; }
-    .single-blog .blog-content .meta li a {
-      color: #6A6972; }
-  .single-blog .blog-content .text {
-    font-size: 23px;
-    font-weight: 400;
-    line-height: 30px;
-    color: #2E2E2E;
-    margin-top: 15px; }
-    @media (max-width: 767px) {
-      .single-blog .blog-content .text {
-        font-size: 20px;
-        line-height: 30px; } }
-  .single-blog .blog-content .more {
-    font-size: 16px;
-    color: #FE7E71;
-    margin-top: 30px; }
-    .single-blog .blog-content .more i {
-      margin-left: 5px; }
-
 /*===========================
        10.SUBSCRIBE  css 
 ===========================*/
@@ -1402,19 +1366,16 @@ border: 0px solid #1C548D;
     border-radius: 5px;
     width: 100%;
     color: #2E2E2E; }
-    .subscribe-form input::placeholder {
+    .subscribe-form input::placeholder, textarea::placeholder {
       opacity: 1;
       color: #B9B9B9; }
-    .subscribe-form input::-moz-placeholder {
+    .subscribe-form input::-moz-placeholder, textarea::-moz-placeholder {
       opacity: 1;
       color: #B9B9B9; }
-    .subscribe-form input::-moz-placeholder {
+    .subscribe-form input::-webkit-input-placeholder, textarea::-webkit-input-placeholder{
       opacity: 1;
       color: #B9B9B9; }
-    .subscribe-form input::-webkit-input-placeholder {
-      opacity: 1;
-      color: #B9B9B9; }
-    .subscribe-form input:focus {
+    .subscribe-form input:focus, textarea:focus{
       border-color: #361CC1; }
   .subscribe-form button {
     position: relative;
@@ -1446,9 +1407,6 @@ border: 0px solid #1C548D;
     .subscribe-form button:hover {
       color: #fff;
       background-position: right center; }
-   
-
-
       
 /*===========================
        11.FOOTER  css 

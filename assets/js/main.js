@@ -440,8 +440,8 @@ var rangeSlider = document.getElementById("rs-range-line");
 var rangeBullet = document.getElementById("rs-bullet");
 var rangeSlider1 = document.getElementById("rs-range-line-1");
 var rangeBullet1 = document.getElementById("rs-bullet-1");
-rangeSlider.style.filter = "hue-rotate(90deg)";
-rangeBullet.style.filter = "hue-rotate(90deg)";
+// rangeSlider.style.filter = "hue-rotate(90deg)";
+// rangeBullet.style.filter = "hue-rotate(90deg)";
     
 rangeSlider1.addEventListener("input", showSliderValue1, false);
 
@@ -452,15 +452,49 @@ function showSliderValue1() {
     rangeBullet1.style.left = (bulletPosition1 * (rangeSlider.offsetWidth-22)) + "px";
     // console.log(rangeSlider.offsetWidth);
     var y;
-    if(x<=1000)
-        y = Math.floor(0.0009*x*x -0.03*x -1);
-    else
-        y= Math.floor(0.0012*x*x -0.33*x -1);
+    y = Math.ceil(0.0001*x*x -0.03*x +6);
     rangeBullet.innerHTML = y;
     var bulletPosition = (y /rangeSlider.max);
     if(bulletPosition>1) bulletPosition=1;
-    rangeSlider.style.filter = "hue-rotate("+(1-bulletPosition)*90+"deg)";
-    rangeBullet.style.filter = "hue-rotate("+(1-bulletPosition)*90+"deg)";
+    // rangeSlider.style.filter = "hue-rotate("+(1-bulletPosition)*90+"deg)";
+    // rangeBullet.style.filter = "hue-rotate("+(1-bulletPosition)*90+"deg)";
     rangeBullet.style.left = (bulletPosition * (rangeSlider.offsetWidth-22)) + "px";
     rangeSlider.value = y;
 }
+
+// Form API 
+
+var G_API_GATEWAY_URL_STR =  "https://2zie9obp6l.execute-api.us-east-1.amazonaws.com/test";
+
+function postSubmit(settings){
+    $.ajax(settings).done(function (response) {
+        document.getElementById("form-thanks").innerHTML = response.message+"<br>Thank you for reaching out to us. We will get back to you as soon as possible."
+        document.getElementById("form-thanks-1").innerHTML = response.message+"<br>Thank you for reaching out to us. We will get back to you as soon as possible." 
+});
+};
+
+function postFormData(se) {
+    
+    document.getElementById("form-thanks").innerHTML = "Please wait ..."
+    document.getElementById("form-thanks-1").innerHTML = "Please wait ..." 
+
+    se.preventDefault();
+    var formObj = se.target;
+    var formData = {
+        "email":formObj.elements[1].value,
+        "name":formObj.elements[0].value,
+        "phone":formObj.elements[2].value
+    }
+    var settings = {
+    "url": "https://2zie9obp6l.execute-api.us-east-1.amazonaws.com/test",
+    "method": "POST",
+    "timeout": 0,
+    "headers": {
+        "Content-Type": "application/json"
+    },
+    "data": JSON.stringify(formData),
+    };
+    postSubmit(settings); 
+};
+
+$(document).on("submit", postFormData);
