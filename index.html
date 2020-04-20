@@ -95,7 +95,7 @@
                                         <a class="page-scroll" href="#about">About</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="#testimonial">Testimonial</a>
+                                        <a class="page-scroll" href="#testimonial">Calculator</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="page-scroll" href="#blog">Blog</a>
@@ -130,7 +130,7 @@
                                     <div class="section">
                                     <input type="text" name="name" placeholder="Your name *" required>
                                     <input type="email" name="email" placeholder="Your email *" required>
-                                    <input type="tel" name="tel" placeholder="Your telephone number" pattern="^\d{10}$" >
+                                    <input type="tel" name="tel" placeholder="Your telephone number" pattern="^\d{10}$" oninvalid="this.setCustomValidity('Please enter valid 10 digit number')" oninput="this.setCustomValidity('')">
                                     </div>
                                     <div class="section">
                                     <textarea name="comment" placeholder="Your comment"></textarea>
@@ -156,11 +156,12 @@
         <div id="home" class="header-hero bg_cover" style="background-image: url(assets/images/banner-bg.svg)">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-lg-8">
+                    <div class="col-lg-10">
                         <div class="header-hero-content text-center">
-                            <h3 class="header-sub-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">Building the future of workplace</h3>
+                            <h3 class="header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">Building the future of workplace</h3>
                             <h2 class="header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s"><div class="typewrite" data-period="1500" data-type='[ "productivity.", "engagement.", "experience."]'></h2>
-                            <p class="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">Measure and improve employee productivity</br>Gain real-time insight into employee matters</p>
+                            <p class="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">Measure and improve employee productivity</p>
+                            <p class="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s">Gain real-time insight into employee matters</p>
                             <a href="#" class="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s" onclick="on(0)">Get Started</a>
                         </div> <!-- header hero content -->
                     </div>
@@ -181,6 +182,11 @@
     
     <div class="brand-area pt-90">
         <div class="container">
+            <div class="row" style="display:flex;">
+                <div class="col-lg-12">
+                    <h3 class="title">Integrations we offer</h3>
+                </div>
+            </div>   <!-- row -->
             <div class="row">
                 <div class="col-lg-12">
                     <div class="brand-logo d-flex align-items-center justify-content-center justify-content-md-between">
@@ -363,16 +369,6 @@
                     </div> <!-- section title -->
                 </div>
             </div> <!-- row -->
-            <div class="row prod-calc wow fadeInUpBig" data-wow-duration="1s" data-wow-delay="0.6s">
-            <div class="range-slider">
-                <span id="rs-bullet" class="rs-label">0</span>
-                <input id="rs-range-line" class="rs-range" type="range" value="5" min="0" max="50000" disabled>
-                
-            </div>        
-            <div class="box-minmax">
-                <span>0</span><span>50000</span>
-            </div>    
-            </div> <!-- row -->
             <div class="row prod-calc wow fadeInUpBig" data-wow-duration="1s" data-wow-delay="1s">
             <div class="range-slider">
                 <span id="rs-bullet-1" class="rs-label">100</span>
@@ -381,6 +377,16 @@
             </div>        
             <div class="box-minmax">
                 <span>100</span><span>10000</span>
+            </div>    
+            </div> <!-- row -->
+            <div class="row prod-calc wow fadeInUpBig" data-wow-duration="1s" data-wow-delay="0.6s">
+            <div class="range-slider">
+                <span id="rs-bullet" class="rs-label">0</span>
+                <input id="rs-range-line" class="rs-range" type="range" value="5" min="0" max="50000" disabled>
+                
+            </div>        
+            <div class="box-minmax">
+                <span>0</span><span>50000</span>
             </div>    
             </div> <!-- row -->
         </div> <!-- container -->
@@ -470,7 +476,7 @@
                                     <div class="section">
                                     <input type="text" name="name" placeholder="Your name *" required>
                                     <input type="email" name="email" placeholder="Your email *" required>
-                                    <input type="tel" name="tel" placeholder="Your telephone number" pattern="^\d{10}$" >
+                                    <input type="tel" name="tel" placeholder="Your telephone number" pattern="^\d{10}$" oninvalid="this.setCustomValidity('Please enter valid 10 digit number')" oninput="this.setCustomValidity('')">
                                     </div>
                                     <div class="section">
                                     <textarea name="comment" placeholder="Your comment"></textarea>

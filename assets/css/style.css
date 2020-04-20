@@ -89,7 +89,9 @@ h2 {
   font-size: 36px; }
 
 h3 {
-  font-size: 28px; }
+  font-size: 28px;
+text-align: center;
+}
 
 h4 {
   font-size: 22px; }
@@ -790,25 +792,28 @@ p {
       .header-hero-content .header-sub-title {
         font-size: 30px; } }
   .header-hero-content .header-title {
-    font-size: 38px;
+    font-size: 50px;
     font-weight: 700;
     color: #fff; }
     @media (max-width: 767px) {
       .header-hero-content .header-title {
-        font-size: 24px; } }
+        font-size: 30px; } }
     @media only screen and (min-width: 576px) and (max-width: 767px) {
       .header-hero-content .header-title {
-        font-size: 30px; } }
+        font-size: 36px; } }
   .header-hero-content .text {
     color: #fff;
-    margin-top: 30px; }
+    margin-top: 20px;
+    font-size: 25px;
+  }
   .header-hero-content .main-btn {
     margin-top: 40px; }
 
 .header-hero-image {
   padding-top: 45px; }
   .header-hero-image img {
-    max-width: 650px; }
+    max-width: 650px;
+  width: 100%; }
     @media (max-width: 767px) {
       .header-hero-image img {
         max-width: 100%; } }
@@ -1392,7 +1397,7 @@ border: 0px solid #1C548D;
   .subscribe-form input, .subscribe-form textarea {
     border: 2px solid #E1E1E1;
     height: 65px;
-    padding: 0 30px;
+    padding: 10px 30px;
     margin-top: 10px;
     border-radius: 5px;
     width: 100%;
