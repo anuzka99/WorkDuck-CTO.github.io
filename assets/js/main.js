@@ -445,11 +445,19 @@ var rangeBullet1 = document.getElementById("rs-bullet-1");
 rangeSlider1.addEventListener("input", showSliderValue1, false);
 
 function showSliderValue1() {
-    rangeBullet1.innerHTML = rangeSlider1.value;
-    var bulletPosition1 = (rangeSlider1.value /rangeSlider1.max);
-    rangeBullet1.style.left = (bulletPosition1 * 578) + "px";
-    rangeBullet.innerHTML = rangeSlider1.value;
-    var bulletPosition = (rangeSlider1.value /rangeSlider1.max);
-    rangeBullet.style.left = (bulletPosition * 578) + "px";
-    rangeSlider.value = rangeSlider1.value;
+    var x = rangeSlider1.value;
+    rangeBullet1.innerHTML = x;
+    var bulletPosition1 = (x /rangeSlider1.max);
+    rangeBullet1.style.left = (bulletPosition1 * (rangeSlider.offsetWidth-22)) + "px";
+    // console.log(rangeSlider.offsetWidth);
+    var y;
+    if(x<=1000)
+        y = Math.floor(0.0009*x*x -0.03*x -1);
+    else
+        y= Math.floor(0.0012*x*x -0.33*x -1);
+    rangeBullet.innerHTML = y;
+    var bulletPosition = (y /rangeSlider.max);
+    if(bulletPosition>1) bulletPosition=1;
+    rangeBullet.style.left = (bulletPosition * (rangeSlider.offsetWidth-22)) + "px";
+    rangeSlider.value = y;
 }

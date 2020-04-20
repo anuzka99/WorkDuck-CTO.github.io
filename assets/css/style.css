@@ -1191,7 +1191,8 @@ p {
 
 .box-minmax {
   margin-top: 30px!important;
-  width: 608px;
+  width: calc(100vw - 100px);
+  max-width: 1000px;
   display: flex;
   justify-content: space-between;
   font-size: 20px;
@@ -1208,7 +1209,8 @@ p {
 
 .rs-range {
   margin-top: 29px;
-  width: 600px;
+  width: calc(100vw - 100px);
+  max-width: 1000px;
   -webkit-appearance: none;
 }
 .rs-range:focus {
@@ -1281,12 +1283,19 @@ p {
   font-style: normal;
   font-weight: normal;
   line-height: normal;
-  font-size: 36px;
+  font-size: 24px;
 }
-.rs-label::after {
-  content: "kg";
+#rs-bullet-1::after {
+  content: "employees";
   display: block;
-  font-size: 20px;
+  font-size: 16px;
+  letter-spacing: 0.07em;
+  margin-top: -2px;
+}
+#rs-bullet::after {
+  content: "000$ per month";
+  display: block;
+  font-size: 16px;
   letter-spacing: 0.07em;
   margin-top: -2px;
 }
