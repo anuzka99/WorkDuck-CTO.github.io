@@ -442,7 +442,6 @@ var rangeBullet = document.getElementById("rs-bullet");
 var rangeSlider1 = document.getElementById("rs-range-line-1");
 var rangeBullet1 = document.getElementById("rs-bullet-1");
 
-rangeSlider.addEventListener("input", showSliderValue, false);
 rangeSlider1.addEventListener("input", showSliderValue1, false);
 
 function showSliderValue1() {
