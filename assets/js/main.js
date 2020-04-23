@@ -90,7 +90,6 @@ $(function () {
         var scrollbarLocation = $(this).scrollTop();
 
         scrollLink.each(function () {
-            console.log($(this.hash).offset());
             var sectionOffset = $(this.hash).offset().top - 73;
 
             if (sectionOffset <= scrollbarLocation) {
