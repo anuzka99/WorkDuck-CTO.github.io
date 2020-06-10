@@ -2,29 +2,6 @@
   "use strict";
 
 
-  var review = $('.textimonial_iner');
-  if (review.length) {
-    review.owlCarousel({
-      items: 1,
-      loop: true,
-      dots: true,
-      autoplay: true,
-      autoplayHoverPause: true,
-      autoplayTimeout: 5000,
-      nav: false,
-      responsive: {
-        0: {
-          margin: 15,
-        },
-        600: {
-          margin: 10,
-        },
-        1000: {
-          margin: 10,
-        }
-      }
-    });
-  }
   $(document).ready(function() {
     $('select').niceSelect();
   });
@@ -119,3 +96,93 @@ mailChimp();
 
 
 }(jQuery));
+
+var randomScalingFactor = function () {
+  return Math.round(Math.random() * 100);
+};
+
+var config = {
+  type: 'pie',
+  data: {
+    datasets: [{
+      data: [
+        randomScalingFactor(),
+        randomScalingFactor(),
+        randomScalingFactor(),
+        randomScalingFactor(),
+        randomScalingFactor(),
+      ],
+      backgroundColor: [
+        'rgb(255, 99, 132)',
+        'rgb(255, 159, 64)',
+        'rgb(255, 205, 86)',
+        'rgb(75, 192, 192)',
+        'rgb(54, 162, 235)',
+      ],
+      label: 'Dataset 1'
+    }],
+    labels: [
+      'Red',
+      'Orange',
+      'Yellow',
+      'Green',
+      'Blue'
+    ]
+  },
+  options: {
+    legend: {
+      display: true,
+      position: 'left',
+    },
+    responsive: true
+  }
+};
+
+window.onload = function () {
+  var ctx = document.getElementById('chart-area').getContext('2d');
+  console.log(ctx,config)
+  window.myPie = new Chart(ctx, config);
+};
+
+// Carousel
+$('.owl-carousel').owlCarousel({
+  items: 1,
+  loop: true,
+  dots: true,
+  autoplay: true,
+  autoplayHoverPause: true,
+  autoplayTimeout: 5000,
+  nav: false,
+  responsive: {
+    0: {
+      margin: 15,
+    },
+    600: {
+      margin: 10,
+    },
+    1000: {
+      margin: 10,
+    }
+  }
+});
+
+var owl = $('.owl-carousel').owlCarousel();
+
+owl.on('changed.owl.carousel', function (event) {
+  if (event.page.index == 1) {
+    config.type = 'doughnut'
+    config.options.cutoutPercentage = '50'
+  }
+  else if (event.page.index == 2){
+    config.type = 'pie'
+    config.options.cutoutPercentage = '0'
+  }
+  config.data.datasets.forEach(function (dataset) {
+    dataset.data = dataset.data.map(function () {
+      return randomScalingFactor();
+    });
+  });
+
+  window.myPie.update();
+    console.log(event.page.index);
+})
